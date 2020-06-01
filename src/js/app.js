@@ -19,13 +19,13 @@ function send(){
     var r_type = document.getElementById('request_type').value;
     var url    = document.getElementById('request_url').value;
     var header = JSON.parse(document.getElementById('Tab1').value );
-    var data   = JSON.parse(document.getElementById('Tab2').value );
+    var data   = JSON.stringify(JSON.parse(document.getElementById('Tab2').value ));
     url = cros + url;
     fetch(url, {
         method  : r_type, 
         body    :  data, 
         headers :  header
     }).then(res => res.json())
-    .then(response => document.getElementById('response').value = JSON.stringify(response) )
+    .then(response => document.getElementById('response').value = JSON.stringify(response, undefined, 4) )
     .catch(error => console.error('Error:', error));
 }
