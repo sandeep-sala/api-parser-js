@@ -15,27 +15,17 @@ document.getElementById("defaultOpen").click();
 
 
 function send(){
-    URL      = "https://www.colive.in/webservices/CRMapi/Chatbot/ServiceRequestSelectAllById"
-    HEADER   = {"Content-Type":"application/json","auth_id":"8E8CA351-110E-4272-8A15-DD26E3B3E8C5"}
-
-    var xhttp;
-    var params = JSON.stringify({ 
-        "CustomerID":"108225"
-     });
-
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
-    }else{
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xhttp.open("POST", URL, true);
-    xhttp.setRequestHeader('Content-Type', 'application/json');
-    xhttp.setRequestHeader('auth_id', '8E8CA351-110E-4272-8A15-DD26E3B3E8C5');
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText)
-        }
-    }
-    xhttp.send(params); 
+    var cros   = 'https://cors-anywhere.herokuapp.com/'
+    var r_type = document.getElementById('request_type').value;
+    var url    = document.getElementById('request_url').value;
+    var header = JSON.parse(document.getElementById('Tab1').value );
+    var data   = JSON.parse(document.getElementById('Tab2').value );
+    url = cros + url;
+    fetch(url, {
+        method  : r_type, 
+        body    :  data, 
+        headers :  header
+    }).then(res => res.json())
+    .then(response => document.getElementById('response').value = JSON.stringify(response) )
+    .catch(error => console.error('Error:', error));
 }

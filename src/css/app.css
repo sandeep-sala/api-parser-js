@@ -70,6 +70,9 @@ padding: 10px;
     height: 10em;
     font-family: cursive;
     line-height: 18px;
+    resize: none;
+    background-color: #171919;
+    width: -webkit-fill-available;
     overflow: auto;
 }
 
@@ -90,6 +93,9 @@ padding: 10px;
     height: 10em;
     font-family: cursive;
     line-height: 18px;
+    resize: none;
+    background-color: #171919;
+    width: -webkit-fill-available;
     overflow: auto;
 }
 

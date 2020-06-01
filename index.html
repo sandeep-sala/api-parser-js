@@ -17,21 +17,21 @@
                     <option value="POST">POST</option>
                 </select>
                 <input id="request_url" type="text" placeholder="Please enter your URL here">
-                <button id ="get_response">Send</button>
+                <button id ="get_response" onclick="send()">Send</button>
             </section>
             <section class="main-container_header">
                 <div class="tab">
                     <button class="tablinks" onclick="openTabs(event, 'Tab1')" id="defaultOpen">Header</button>
                     <button class="tablinks" onclick="openTabs(event, 'Tab2')">Body</button>
                 </div>
-                <div id="Tab1" class="tabcontent" contenteditable="true"></div>
-                <div id="Tab2" class="tabcontent" contenteditable="true"></div>
+                <textarea id="Tab1" class="tabcontent" contenteditable="true"></textarea>
+                <textarea id="Tab2" class="tabcontent" contenteditable="true"></textarea>
             </section>
             <section class="main-container_response">
                 <div class="tab">
                     <button class="tablinks" >Response</button>
                 </div>
-                <div id="response"  contenteditable="true" style="display: block;"></div>
+                <textarea id="response"  contenteditable="true" style="display: block;"></textarea>
             </section>
         </main>
         <footer class="main-div_footer">made with ❤️ ~ <b>Sandeep Sala</b></footer>
