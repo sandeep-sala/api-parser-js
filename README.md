@@ -21,4 +21,4 @@ open index.html in browser
 
 ## Screenshots
 
-![ScreenShot](https://i.postimg.cc/7h3wSnkw/Annotation-2020-06-07-155938.png)
+![ScreenShot](https://raw.githubusercontent.com/sandeep-sala/api-parser/master/src/img/api_parser.png)
